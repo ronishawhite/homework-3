@@ -94,4 +94,29 @@ public class DoublyLinkedList {
         length =0;
     }
 
+    public static void main (String[] args){
+        DoublyLinkedList list = new DoublyLinkedList();
+        String test1 = "abcd, this is test 1. ";
+        String test2 = "efgh, this is test 2. ";
+        
+        list.insertEnd(test2);
+        list.insertStart(test1);
+        list.insertEnd("this is addition after test 2. ");
+        System.out.println(list);
+        
+        Node n = list.find(test2);
+        n.setData(n.getData() + " :Found node that matches string test2! ");
+        System.out.println(list);
+        
+        list.removeAtIndex(1);
+        System.out.println("Index 1 is deleted(test2):  " + list);
+        
+        System.out.println("Traversing Forward: " + list);
+        System.out.println("Traversing Backward: " + list.toStringReverse());
+        list.clear();
+        System.out.println("Clearing List. ");
+        System.out.println(list + "List is cleared");
+        
+
+    }
 }
