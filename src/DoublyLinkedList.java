@@ -3,7 +3,7 @@ public class DoublyLinkedList {
     private Node first;
     private Node last;
     private int length;
-    
+    //delete node
     public void removeAtIndex(int index){
         if(index > this.length-1){
           System.out.println("Please select a smaller index");
@@ -23,7 +23,7 @@ public class DoublyLinkedList {
           m.setNext(n.getNext());
         }
     }
-    
+    //find node
     public Node find(String value){
         Node n = this.first;
         while(n.getData() != value){
@@ -34,7 +34,7 @@ public class DoublyLinkedList {
         }
         return null;
     }
-     
+     //reverse list
     public String toStringReverse(){
         String result = "";
         for(int i=0; i<this.length; i++){
@@ -46,7 +46,7 @@ public class DoublyLinkedList {
         }
         return result;
     }
-       
+       //forward list
     public String toString(){
         String str = "";
         Node pointer = this.first;
@@ -56,7 +56,7 @@ public class DoublyLinkedList {
         }        
         return str;
     }
-        
+        //insert node
     public void insertStart(String value){
     this.length++;
     Node n = new Node(value);
@@ -86,14 +86,17 @@ public class DoublyLinkedList {
         this.last = n;
       }
     }
-
+//destroy list
     public void clear() {
     // drop access to all other nodes
         first = null;
         last = null;
         length =0;
-    }
+        
+       }
+  
 
+//print test
     public static void main (String[] args){
         DoublyLinkedList list = new DoublyLinkedList();
         String test1 = "abcd, this is test 1. ";
@@ -117,6 +120,6 @@ public class DoublyLinkedList {
         System.out.println("Clearing List. ");
         System.out.println(list + "List is cleared");
         
-
+      
     }
 }
